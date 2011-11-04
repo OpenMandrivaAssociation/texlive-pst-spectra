@@ -50,6 +50,7 @@ package for decoding its arguments.
 %doc %{_texmfdistdir}/doc/generic/pst-spectra/README
 %doc %{_texmfdistdir}/doc/generic/pst-spectra/pst-spectra.pdf
 %doc %{_texmfdistdir}/doc/generic/pst-spectra/pst-spectraEN.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -60,3 +61,5 @@ package for decoding its arguments.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
