@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /graphics/pstricks/contrib/pst-spectra
-# catalog-date 2008-08-23 00:25:16 +0200
-# catalog-license lppl
-# catalog-version 0.91
 Name:		texlive-pst-spectra
-Version:	0.91
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Draw continuum, emission and absorption spectra with PSTricks
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-spectra
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-spectra.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-spectra.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-spectra.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-spectra.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ elements can be displayed. The package requires the xkeyval
 package for decoding its arguments.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -44,24 +38,10 @@ package for decoding its arguments.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.91-2
-+ Revision: 755480
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.91-1
-+ Revision: 719398
-- texlive-pst-spectra
-- texlive-pst-spectra
-- texlive-pst-spectra
-- texlive-pst-spectra
-
