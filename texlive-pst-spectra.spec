@@ -1,6 +1,6 @@
 Name:		texlive-pst-spectra
 Version:	15878
-Release:	1
+Release:	2
 Summary:	Draw continuum, emission and absorption spectra with PSTricks
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-spectra
